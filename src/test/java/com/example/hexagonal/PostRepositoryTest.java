@@ -44,11 +44,14 @@ public class PostRepositoryTest {
 
     @Test
     public void givenValidPostId_whenFindByPostId_thenPostIsFound() {
+        // Given
         Long postId = 1L;
         settingPost(postId);
 
+        // When
         Post result = postRepository.findByPostId(postId);
 
+        // Then
         assertNotNull(result);
         assertEquals(postId, result.getPostId());
     }
