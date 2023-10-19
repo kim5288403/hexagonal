@@ -1,4 +1,4 @@
-package com.example.hexagonal.entity;
+package com.example.hexagonal.post.adapter.out.persistence.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Post {
+public class PostEntity {
 
     @Id
     @Column(name = "post_id")

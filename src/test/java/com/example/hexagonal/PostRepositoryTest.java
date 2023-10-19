@@ -1,8 +1,8 @@
 package com.example.hexagonal;
 
-import com.example.hexagonal.config.QuerydslConfig;
-import com.example.hexagonal.entity.Post;
-import com.example.hexagonal.repository.PostRepository;
+import com.example.hexagonal.post.adapter.out.configuration.QuerydslConfig;
+import com.example.hexagonal.post.adapter.out.persistence.entity.PostEntity;
+import com.example.hexagonal.post.adapter.out.persistence.repository.PostRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.junit.jupiter.api.Test;
@@ -33,7 +33,7 @@ public class PostRepositoryTest {
     }
 
     private void settingPost(Long postId) {
-        Post saveData = Post
+        PostEntity saveData = PostEntity
                 .builder()
                 .postId(postId)
                 .content("content")
@@ -49,7 +49,7 @@ public class PostRepositoryTest {
         settingPost(postId);
 
         // When
-        Post result = postRepository.findByPostId(postId);
+        PostEntity result = postRepository.findByPostId(postId);
 
         // Then
         assertNotNull(result);
