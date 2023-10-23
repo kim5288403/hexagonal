@@ -1,8 +1,7 @@
 package com.example.hexagonal.post.adapter.in.web;
 
-import com.example.hexagonal.post.adapter.in.web.dto.request.WriteRequest;
-import com.example.hexagonal.post.appilcation.port.in.DetailUseCase;
-import com.example.hexagonal.post.appilcation.port.in.WriteUseCase;
+import com.example.hexagonal.post.adapter.in.web.request.WriteRequest;
+import com.example.hexagonal.post.appilcation.port.in.PostUseCase;
 import com.example.hexagonal.post.domain.model.Post;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -15,16 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/post")
 @RequiredArgsConstructor
 public class PostController {
-    private final WriteUseCase writeUseCase;
-    private final DetailUseCase detailUseCase;
+
+    private final PostUseCase postUseCase;
 
     @RequestMapping(method = RequestMethod.GET, path = "{id}")
     public Post detail(@PathVariable Long id) {
-        return detailUseCase.detail(id);
+        return postUseCase.detail(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "")
-    public void write(@Valid WriteRequest writeRequest) {
-        writeUseCase.write(writeRequest.getContent());
+    public Post write(@Valid WriteRequest writeRequest) {
+        return postUseCase.write(writeRequest.getContent());
     }
 }

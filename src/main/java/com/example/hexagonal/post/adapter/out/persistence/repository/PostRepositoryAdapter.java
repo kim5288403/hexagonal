@@ -2,15 +2,14 @@ package com.example.hexagonal.post.adapter.out.persistence.repository;
 
 import com.example.hexagonal.post.adapter.out.persistence.entity.PostEntity;
 import com.example.hexagonal.post.adapter.out.persistence.mapper.PostMapper;
-import com.example.hexagonal.post.appilcation.port.out.LoadPostPort;
-import com.example.hexagonal.post.appilcation.port.out.SavePostPort;
+import com.example.hexagonal.post.appilcation.port.out.PostOutPort;
 import com.example.hexagonal.post.domain.model.Post;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class PostRepositoryAdapter implements SavePostPort, LoadPostPort {
+public class PostRepositoryAdapter implements PostOutPort {
 
     private final PostMapper postMapper;
     private final PostRepository postRepository;

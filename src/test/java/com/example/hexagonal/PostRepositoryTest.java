@@ -1,6 +1,6 @@
 package com.example.hexagonal;
 
-import com.example.hexagonal.post.adapter.out.configuration.QuerydslConfig;
+import com.example.hexagonal.post.adapter.out.config.QuerydslConfig;
 import com.example.hexagonal.post.adapter.out.persistence.entity.PostEntity;
 import com.example.hexagonal.post.adapter.out.persistence.repository.PostRepository;
 import jakarta.persistence.EntityManager;

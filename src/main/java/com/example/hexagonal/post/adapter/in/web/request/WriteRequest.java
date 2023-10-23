@@ -1,4 +1,4 @@
-package com.example.hexagonal.post.adapter.in.web.dto.request;
+package com.example.hexagonal.post.adapter.in.web.request;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
