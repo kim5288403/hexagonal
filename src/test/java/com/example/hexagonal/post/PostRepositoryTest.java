@@ -1,4 +1,4 @@
-package com.example.hexagonal;
+package com.example.hexagonal.post;
 
 import com.example.hexagonal.post.adapter.out.config.QuerydslConfig;
 import com.example.hexagonal.post.adapter.out.persistence.entity.PostEntity;
