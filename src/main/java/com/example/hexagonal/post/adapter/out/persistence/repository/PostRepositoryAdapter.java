@@ -22,8 +22,8 @@ public class PostRepositoryAdapter implements PostOutPort {
     }
 
     @Override
-    public Post load(Long id) {
-        PostEntity postEntity = postRepository.findByPostId(id);
+    public Post load(Long postId) {
+        PostEntity postEntity = postRepository.findByPostId(postId);
 
         return postMapper.toDomain(postEntity);
     }

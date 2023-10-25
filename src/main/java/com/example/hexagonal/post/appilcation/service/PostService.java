@@ -19,7 +19,7 @@ public class PostService implements PostUseCase {
     }
 
     @Override
-    public Post detail(Long id) {
-        return postOutPort.load(id);
+    public Post detail(Long postId) {
+        return postOutPort.load(postId);
     }
 }
